@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>IsCLL-15</title>
@@ -9,12 +9,35 @@
 	<link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/1.11.6/semantic.min.js" type="text/javascript">
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/1.11.6/semantic.min.css" type="text/css">		
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="css.js"></script>
 	<script> 
 	$(function(){
-	$("#header").load("header.html"); 
-	$("#footer").load("footer.html"); 
+		$("#header").load("header.html"); 
+		$("#footer").load("footer.html"); 
+		$("#getFile").css("display", "none"); 
+		$("#btn-gf").click(function () {
+            if( $("#shadow").val() == sw4   ) {
+				//alert($("#fid").val());
+				$("#downloadAct").html(" [<a href='"+  searchFile( $("#fid").val() )  +"'   onclick='restore();' >點此下載</a> ]");
+			} else {
+				alert('密碼錯誤');
+				//$("#getFile").css("display", "none"); 
+			}
+        });
+
 	});
+	function getFile(input){
+		$("#fid").val(input);
+		$("#getFile").css("display", "block"); 
+	}
+	function restore(){
+		$("#downloadAct").html('');
+		$("#fid").val('');
+	}
 	</script> 
+	<style>
+	td {line-height:1.7em;}
+	</style>
 </head>
 <body>
 <!--Remaining section-->
@@ -39,6 +62,9 @@
   	<div class="ui center aligned orange inverted segment">
   		<p style="font-size:15pt;">議程</p>
   	</div>
+	<div id="getFile" lass="ui segment" style="color:black;">
+	下載文章前，請輸入授權碼：<input type=hidden id="fid" name="fid"><input type="password" id="shadow"> <input name="btn-gf" id="btn-gf" type="button" value="取得檔案" /><span id="downloadAct"></span>
+	</div>
   	<div class="ui segment" style="color:black;">
   		<div class="ui top attached tabular menu">
 		    <a class="active item" data-tab="first">第一天</a>
@@ -46,8 +72,131 @@
 		    <a class="item" href="program3.html" data-tab="third">第三天</a>
   		</div>
 			<div class="ui bottom attached active tab segment" data-tab="first">
-				<img class="ui centered image" 
-				src="http://i.imgur.com/o70kD82.jpg">
+  <table width="720" align="center" cellpadding="7" border=1 >
+      <tr>
+        <td width="100%" colspan=2 align="center" valign="middle"><b>第一天：</b><b>105/5/27</b><b>星期五</b></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">09:00-09:30</td>
+        <td width="86%" align="center" valign=middle>報到、註冊 </td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">09:30-09:40</td>
+        <td width="86%" align="center" valign=middle><p><b>開幕式</b>
+          陳惠邦 (國立新竹教育大學校長)</p>
+          <p> 鄭秋豫 (中央研究院語言學研究所特聘研究員兼所長)</p></td>
+      </tr>
+      <tr>
+        <td width="13%" rowspan=2 align="center" valign="middle">09:40-10:40</td>
+        <td width="86%" align="center" valign="middle"><p><b>特邀演講</b>（一）
+            <b style='mso-bidi-font-weight:normal'><a href="http://randylapolla.net/"
+  target="_blank">Randy
+            LaPolla</a></b> (Nanyang
+            Technological University)
+            <br>
+            <i>On the Utility of a Communication-based
+            Empirical Approach in Linguistics</i></p></td>
+      </tr>
+      <tr>
+        <td width="86%" align="center" valign=middle>主持人：曹逢甫 (國立清華大學榮譽退休教授)</td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">10:40-11:10</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>休息</b></td>
+      </tr>
+      <tr>
+        <td width="100%" colspan=2 align="center" valign="middle">第一場 主持人：王旭 (元智大學應用外語學系教授)</td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">11:10-11:35</td>
+        <td width="86%" align="center" valign=middle><b style='mso-bidi-font-weight:normal'>Ruiqing Shen </b>(Hong Kong University of Science and Technology)
+          <br>
+          <a href="#" onclick="getFile('1-1');">派生還是湧現？——從建陽閩語的聲調變異檢驗不同音系理論</a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">11:35-12:00</td>
+        <td width="86%" align="center" valign=middle><b style='mso-bidi-font-weight:normal'>Yuchau Hsiao </b>(National
+            Chengchi University)
+			<br>
+          <a href="#" onclick="getFile('1-2');">Tonal Variation in Zhuolan Raoping</a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">12:00-13:30</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>午餐</b></td>
+      </tr>
+      <tr>
+        <td width="100%" colspan=2 align="center" valign="middle">第二場 主持人：蘇以文 (國立臺灣大學語言學研究所教授)</td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">13:30-13:55</td>
+        <td width="86%" align="center" valign=middle><b style='mso-bidi-font-weight:normal'>Jiun-Shiung Wu </b>(National Chung
+            Cheng University)
+          <br>
+          <a href="#" onclick="getFile('2-1');"><i>Information State Updating and Testing:</i><i style='mso-bidi-font-style:normal'> </i><i style='mso-bidi-font-style:normal'>Dynamic
+            Semantics for Y&iacute;d&igrave;ng, Sh&igrave;b&igrave; and Ti&#283;d&igrave;ng</a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">13:55-14:20</td>
+        <td width="86%" align="center" valign=middle><b style='mso-bidi-font-weight:normal'>Siaw-Fong Chung </b>&amp; <b style='mso-bidi-font-weight:normal'>Suet-Ching Soon </b>(National
+            Chengchi University)
+          <br>
+          <a href="#" onclick="getFile('2-2');"><i style='mso-bidi-font-style:normal'>Investigating
+            Antonymous Elements in Mandarin Idiomatic Four-character Idioms</i></a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">14:20-14:45</td>
+        <td width="86%" align="center" valign=middle>&#40644;潔 (華中科技大學)<br>
+          <a href="#" onclick="getFile('2-3');">基於用法的漢英靜態空間關係識解研究</a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">14:45-15:15</td>
+        <td width="86%" align="center" valign=middle><b style='mso-bidi-font-weight:normal'>休息</b></td>
+      </tr>
+      <tr>
+        <td width="100%" colspan=2 align="center" valign="middle">第三場 主持人：湯志真 (中央研究院語言學研究所研究員兼副所長)</td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">15:15-15:40</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>Miao-Ling Hsieh </b>&amp; <b style='mso-bidi-font-weight:normal'>Jen-I Li </b>(National
+            Taiwan Normal University)
+          <a href="#" onclick="getFile('3-1');"><i style='mso-bidi-font-style:normal'><br>
+          On the Three Focus-Sensitive Particles in Taiwan Southern Min:</i><i  style='mso-bidi-font-style:normal'> </i><i  style='mso-bidi-font-style:normal'>TO, MA and LONG</i></a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">15:40-16:05</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>Boban
+            Arsenijevic </b>(University of Potsdam),<b style='mso-bidi-font-weight:
+  normal'> Franti&#353;ek Kratochvil </b>(Nanyang Technological University)<b
+  style='mso-bidi-font-weight:normal'> </b>&amp;<br>            <b style='mso-bidi-font-weight:
+  normal'>Joanna Ut-Seong Sio </b>(Nanyang Technological University)<b
+  style='mso-bidi-font-weight:normal'> <br>
+            </b>
+          <a href="#" onclick="getFile('3-2');"><i style='mso-bidi-font-style:normal'>Equative and similative demonstratives in Sinitic and beyond</i></a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">16:05-16:35</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>休息</b></td>
+      </tr>
+      <tr>
+        <td width="100%" colspan=2 align="center" valign="middle">第四場 主持人：李壬癸 (中央研究院院士、語言學研究所兼任研究員)</td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">16:35-17:00</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>Elizabeth
+            Zeitoun</b> (Academia Sinica)
+          <a href="#" onclick="getFile('4-1');"><i style='mso-bidi-font-style:normal'><br>
+          The </i><i
+  style='mso-bidi-font-style:normal'>Dynamic/Stative Distinction in Formosan Languages:</i><i style='mso-bidi-font-style:normal'> </i><i style='mso-bidi-font-style:normal'>More on PAn
+            *pa- and *ka-</i></a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">17:00-17:25</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>Henry Y. Chang </b>(Academia
+            Sinica)
+          <br>
+          <a href="#" onclick="getFile('4-2');"><i style='mso-bidi-font-style:normal'>Impersonal Pronoun in Tsou</i></a></td>
+      </tr>
+    </table>
 			</div>
 			<div class="ui bottom attached tab segment" data-tab="second">
 			    Second
@@ -56,8 +205,9 @@
 			    Third
 			</div>
 		</div>
+		
 </div>
-	
+
 
 <!--Remaining section-->
 <div id="footer"></div>

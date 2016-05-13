@@ -9,12 +9,35 @@
 	<link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/1.11.6/semantic.min.js" type="text/javascript">
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/1.11.6/semantic.min.css" type="text/css">		
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="css.js"></script>
 	<script> 
 	$(function(){
-	$("#header").load("header.html"); 
-	$("#footer").load("footer.html"); 
+		$("#header").load("header.html"); 
+		$("#footer").load("footer.html"); 
+		$("#getFile").css("display", "none"); 
+		$("#btn-gf").click(function () {
+            if( $("#shadow").val() == sw4   ) {
+				//alert($("#fid").val());
+				$("#downloadAct").html(" [<a href='"+  searchFile( $("#fid").val() )  +"'   onclick='restore();' >點此下載</a> ]");
+			} else {
+				alert('密碼錯誤');
+				//$("#getFile").css("display", "none"); 
+			}
+        });
+
 	});
+	function getFile(input){
+		$("#fid").val(input);
+		$("#getFile").css("display", "block"); 
+	}
+	function restore(){
+		$("#downloadAct").html('');
+		$("#fid").val('');
+	}
 	</script> 
+		<style>
+	td {line-height:1.7em;}
+	</style>
 </head>
 <body>
 <!--Remaining section-->
@@ -39,6 +62,9 @@
   	<div class="ui center aligned orange inverted segment">
   		<p style="font-size:15pt;">議程</p>
   	</div>
+	<div id="getFile" lass="ui segment" style="color:black;">
+	下載文章前，請輸入授權碼：<input type=hidden id="fid" name="fid"><input type="password" id="shadow"> <input name="btn-gf" id="btn-gf" type="button" value="取得檔案" /><span id="downloadAct"></span>
+	</div>
   	<div class="ui segment" style="color:black;">
   		<div class="ui top attached tabular menu">
 		    <a class="item" href="program.html" data-tab="first">第一天</a>
@@ -46,13 +72,59 @@
 		    <a class="active item" href="program3.html" data-tab="third">第三天</a>
   		</div>
 			<div class="ui bottom attached active tab segment" data-tab="first">
-				<img class="ui centered image" src="http://imgur.com/Tt0lh83.jpg">
+				<table width="720" align="center" cellpadding="7" border=1 >
+      <tr>
+        <td width="100%" colspan=2 align="center"><b>第三天：</b><b>105/5/29</b><b>星期日</b></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">09:00-09:30</td>
+        <td width="86%" align="center" valign="middle">報到、註冊</td>
+      </tr>
+      <tr>
+        <td width="13%" rowspan=2 align="center" valign="middle">09:30-10:30</td>
+        <td width="86%" align="center" valign=middle><b>特邀演講</b>（三）
+          <b style='mso-bidi-font-weight:normal'>Chu-Ren Huang</b> (The Hong Kong Polytechnic University)
+          <br>
+          眾包、分詞、與語意透明度：中國語言學實證研究新進路</td>
+      </tr>
+      <tr>
+        <td width="86%" align="center" valign="middle">主持人<b>: </b>何萬順 (國立政治大學語言學研究所特聘教授)</td>
+      </tr>
+      <tr>
+        <td width="100%" colspan=2 align="center" valign="middle">第九場 主持人：鍾榮富 (南臺科技大學應用英語系講座教授)</td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">10:30-10:55</td>
+        <td width="86%" align="center" valign=middle><b style='mso-bidi-font-weight:normal'>Yuwen Lai </b>(National Chiao
+            Tung University)<br>
+          <a href="#" onclick="getFile('9-1');"><i style='mso-bidi-font-style:normal'>Prevocalic
+            Aspiration and Tonogenesis</i></a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">10:55-11:20</td>
+        <td width="86%" align="center" valign=middle><b style='mso-bidi-font-weight:normal'>Shu-Ing Shyu </b>&amp;<b
+  style='mso-bidi-font-weight:normal'> Tsung-Lin Tung </b>(National Sun Yat-sen
+            University)<br>
+          <a href="#" onclick="getFile('9-2');"><i style='mso-bidi-font-style:normal'>The Role of Prosody in Mandarin Wh-phrases</i></a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">11:20-11:45</td>
+        <td width="86%" align="center" valign="middle"><b style='mso-bidi-font-weight:normal'>Wai-Sum Lee </b>(City
+            University of Hong Kong)<br>
+          <a href="#" onclick="getFile('9-3');"><i style='mso-bidi-font-style:normal'>Vowel Development
+            in Cantonese-speaking Children</i></a></td>
+      </tr>
+      <tr>
+        <td width="13%" align="center" valign="middle">11:45-12:00</td>
+        <td width="86%" align="center" valign="middle"><b>閉幕式</b></td>
+      </tr>
+    </table>
 			</div>
 			<div class="ui bottom attached tab segment" data-tab="second">
-			  <img class="ui centered image" src="http://i.imgur.com/nvQRP5G.jpg">
+			   
 			</div>
 			<div class="ui bottom attached tab segment" data-tab="third">
-			  <img class="ui centered image" src="http://imgur.com/nvQRP5G.jpg">
+	
 			</div>
 		</div>
 </div>
