@@ -12,22 +12,22 @@
 	<script src="css.js"></script>
 	<script> 
 	$(function(){
-		$("#header").load("header.html"); 
+		$("#header").load("en_header.html"); 
 		$("#footer").load("footer.html"); 
 		$("#getFile").css("display", "none"); 
 		$("#btn-gf").click(function () {
             if( $("#shadow").val() == sw4   ) {
 				
-				window.location.assign("list.html");
+				window.location.assign("en_list.html");
 			} else {
-				alert('密碼錯誤');
+				alert('Error code');
 				//$("#getFile").css("display", "none"); 
 			}
         });
 
 	});
 	function restore(){
-    window.location.assign("list.html");
+    window.location.assign("en_list.html");
 	}
 	</script> 
 	<style>
@@ -55,7 +55,7 @@
 	</div>
   <div class="thirteen wide column" >
   	<div class="ui center aligned orange inverted segment">
-  		<p style="font-size:15pt;">論文全文</p>
+  		<p style="font-size:15pt;">Full paper</p>
   	</div>
   	<div class="ui segment" style="color:black;">
         <br>
@@ -68,7 +68,7 @@
         <br>
       <h2 class="ui center aligned icon header">
         <div id="restore" style="color:black;">
-        下載文章前，請輸入授權碼：
+        Please enter the code before download the full paper：
         <div class="ui input">
           <input type=hidden id="fid" name="fid">
           <input type="password" id="shadow">
@@ -76,7 +76,7 @@
         <br>
         <br>
         <div class="ui huge green button" name="btn-gf" id="btn-gf" type="button" value="取得檔案">
-          取得檔案
+          Download
         </div>
         <span id="downloadAct"></span>
       </div>
